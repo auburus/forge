@@ -2,11 +2,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-	<title>Forge</title>
+	<title>Forge2 - Better, stronger, faster</title>
 	<script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/libs/handlebars-v1.3.0.js"></script>
+	<script type="text/javascript" src="js/libs/handlebars-v2.0.0.js"></script>
 	<script type="text/javascript" src="js/libs/ember.js"></script>
 	<script type="text/javascript" src="js/libs/ember-data.js"></script>
 	
@@ -14,6 +14,21 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-hola
+
+<script type="text/x-handlebars" data-template-name="application">
+{{#each release in model}}
+	{{release.name}}
+	<ul>
+	{{#each task in release.tasks}}
+		<li>{{task.name}}</li>
+	{{/each}}
+	</ul>
+{{/each}}
+</script>
+<!-- http://jsfiddle.net/ud3323/5uX9H/ -->
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/router.js"></script>
+<script type="text/javascript" src="js/models/task.js"></script>
+<script type="text/javascript" src="js/models/release.js"></script>
 </body>
 </html>
